@@ -44,7 +44,7 @@ def normalize(x):
         for k in range(x.shape[0]):
             # get all the values of the specific column
             col.append(x[k, i])
-        # sort the column array so the first index contains min value, last index contains max value for that cloumn
+        # sort the column array so the first index contains min value, last index contains max value for that column
         col.sort()
         min_of_col = col[0]
         max_of_col = col[x.shape[0] - 1]
@@ -55,7 +55,7 @@ def normalize(x):
     return x
 
 
-# for unweighted KNN cases, we use this function to predict test datas classes
+# for each element in that column normalize one by one
 def calculate_predictions(x_train, sorted_keys, test, true_prediction, false_prediction):
     closest_points = []
     for i in range(9):
